@@ -1,4 +1,81 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%# image_tag 'http://placehold.it/950x300' %>
-<%# render 'subscribe' %>
+<div id="fb-root"></div>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=252385738211526";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<div id="main" role="main">
+  <section class="slider">
+    <div class="flexslider">
+      <ul class="slides">
+        <li>
+			<%=image_tag "kitchen_adventurer_caramel.jpg"%>
+			<div>
+				<div class="panel">
+				<div class="fb-comments" data-href="http://www.plupets.com" data-num-posts="10" data-width="470"></div>
+				</div>
+				<p class="flip">Show/Hide Panel</p>
+			</div>
+    		</li>
+    		<li>
+			<%=image_tag "kitchen_adventurer_lemon.jpg"%>
+			<div>
+				<div class="panel">
+				<div class="fb-comments" data-href="http://www.plupets.com" data-num-posts="10" data-width="470"></div>
+				</div>
+				<p class="flip">Show/Hide Panel</p>
+				<p></p>
+			</div>
+    		</li>
+    		<li>
+			<%=image_tag "kitchen_adventurer_donut.jpg"%>
+			<div>
+				<div class="panel">
+				<div class="fb-comments" data-href="http://www.plupets.com" data-num-posts="10" data-width="470"></div>
+				<p></p>
+				</div>
+				<p class="flip">Show/Hide Panel</p>
+			</div>
+    		</li>
+    		<li>
+			<%=image_tag "kitchen_adventurer_caramel.jpg"%>
+			<div>
+				<div class="panel">
+				<div class="fb-comments" data-href="http://www.plupets.com" data-num-posts="10" data-width="470"></div>
+				<p></p>
+				</div>
+				<div class="flip">Show/Hide lol Panel</div>
+			</div>
+    		</li>
+      </ul>  
+<!-- jQuery -->
+
+<script>
+$(document).ready(function(){
+$("div.flip").click(function(){
+$("div.panel").slideToggle("slow",function(){
+	//$("<div class='fb-comments' data-href='http://www.plupets.com' data-num-posts='10' data-width='470'></div>").appendTo("div.panel");
+});
+});
+});
+</script>
+
+<script type="text/javascript">
+
+$(window).load(function(){
+  $('.flexslider').flexslider({
+    animation: "slide",
+    start: function(slider){
+      $('body').removeClass('loading');
+    }
+  });
+});
+</script>
+
+
