@@ -1,3 +1,4 @@
+// Facebook Javascript SDK
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -6,7 +7,7 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-
+// Facebook comments
 $(document).ready(function(){
   $("div.flip").click(function(){
     $("div.panel").slideToggle("slow",function(){
@@ -15,11 +16,16 @@ $(document).ready(function(){
   });
 });
 
+//Slider
 $(window).load(function(){
   $('.flexslider').flexslider({
     animation: "slide",
     start: function(slider){
       $('body').removeClass('loading');
+      $('.slides li img ').click(function(event) {
+        event.preventDefault();
+        slider.flexAnimate(slider.getTarget("next"));
+      });
     }
   });
 });
