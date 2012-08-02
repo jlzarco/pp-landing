@@ -8,11 +8,13 @@
 }(document, 'script', 'facebook-jssdk'));
 
 // Facebook comments
+var togle =false;
 $(document).ready(function(){
   $("div.flip").click(function(){
+	togle=true;
     $("div.panel").slideToggle("slow",function(){
-      //$("<div class='fb-comments' data-href='http://www.plupets.com' data-num-posts='10' data-width='470'></div>").appendTo("div.panel");
-    });
+		
+	});
   });
 });
 

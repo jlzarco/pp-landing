@@ -788,9 +788,7 @@
    //FlexSlider: Initialize
     methods.init();
   }
-$(".img").click(function(){
-	
-});
+
   
   //FlexSlider: Default Settings
   $.flexslider.defaults = {
