@@ -1,3 +1,5 @@
+
+
 // Facebook Javascript SDK
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -7,16 +9,7 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-// Facebook comments
-var togle =false;
-$(document).ready(function(){
-  $("div.flip").click(function(){
-	togle=true;
-    $("div.panel").slideToggle("slow",function(){
-		
-	});
-  });
-});
+
 
 //Slider
 $(window).load(function(){
@@ -27,6 +20,12 @@ $(window).load(function(){
       $('.slides li img ').click(function(event) {
         event.preventDefault();
         slider.flexAnimate(slider.getTarget("next"));
+		if(togle){
+	    $("div.panel").slideToggle("slow",function(){
+		});
+	}
+		togle=false;
+
       });
     }
   });

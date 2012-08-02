@@ -8,6 +8,17 @@
  *
  * Contributing author: Tyler Smith (@mbmufffin)
  */	
+//variable para saber si se baja el togglebar 
+var togle =false;
+
+// Facebook comments
+$(document).ready(function(){
+  $("div.flip").click(function(){
+    $("div.panel").slideToggle("slow",function(){
+		togle=true;
+	});
+  });
+});
 
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -89,11 +100,17 @@
         slider.setup("init");
         
         // CONTROLNAV:
-        if (vars.controlNav) methods.controlNav.setup();
+        if (vars.controlNav)
+ 			{
+				methods.controlNav.setup();
+				
+			}
         
         // DIRECTIONNAV:
-        if (vars.directionNav) methods.directionNav.setup();
-        
+        if (vars.directionNav) 
+			{
+				methods.directionNav.setup();
+        	}
         // KEYBOARD:
         if (vars.keyboard && ($(slider.containerSelector).length === 1 || vars.multipleKeyboard)) {
           $(document).bind('keyup', function(event) {
@@ -103,6 +120,12 @@
                            (keycode === 37) ? slider.getTarget('prev') : false;
               slider.flexAnimate(target, vars.pauseOnAction);
             }
+				if(togle){
+			    $("div.panel").slideToggle("slow",function(){
+				});
+			}
+				togle=false;
+
           });
         }
         // MOUSEWHEEL:
@@ -465,7 +488,15 @@
         if (slider.syncExists && !fromNav) methods.sync("animate");
         
         // CONTROLNAV
-        if (vars.controlNav) methods.controlNav.active();
+        if (vars.controlNav)
+ 			{
+				methods.controlNav.active();
+				if(togle){
+			    $("div.panel").slideToggle("slow",function(){
+				});
+			}
+				togle=false;
+			}
         
         // !CAROUSEL:
         // CANDIDATE: slide active class (for add/remove slide)
